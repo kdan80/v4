@@ -14,7 +14,7 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <div>hello world</div>
+                <div className='text-3xl underline'>hello world</div>
             </main>
         </div>
     )
