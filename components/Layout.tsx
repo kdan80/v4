@@ -1,6 +1,7 @@
 import React from 'react'
 import DocumentHeader from 'components/DocumentHeader'
 import Section from 'components/sections/Section'
+import Header from 'components/header/Header'
 
 interface Props {
     location?: string
@@ -13,16 +14,18 @@ const Layout = ({ children, location }: Props) => {
     const [isLoading, setIsLoading] = React.useState<boolean>(isHome)
 
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen font-sans text-white'>
             <DocumentHeader />
-            {/* Background image for the entire site */}
 
+            {/* Background image for the entire site */}
             <div className='fixed top-0 left-0 -z-10 bg-img w-screen h-screen bg-no-repeat bg-cover bg-fixed' />
 
-            {isLoading && isHome ? (
-                <div className='text-red-600'>Hello</div>
+            {false ? (
+                <div className='text-red-600'>Loader</div>
             ) : (
-                <div className='text-red-600'>Goodbye</div>
+                <>
+                    <Header />
+                </>
             )}
         </div>
     )

@@ -9,6 +9,10 @@ module.exports = {
             backgroundImage: {
                 img: "url('/images/background.webp')",
             },
+            fontFamily: {
+                sans: ['Poppins', 'Roboto', 'Arial', 'sans', 'sans-serif'],
+                mono: ['Roboto Mono', 'Hack', 'SF Mono', 'mono', 'monospace'],
+            },
         },
     },
     plugins: [],
