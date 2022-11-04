@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             colors: {
                 hero: '#13d5bb',
+                dropdownNav: 'rgba(48, 49, 54,.6)',
             },
             backgroundImage: {
                 img: "url('/images/background.webp')",

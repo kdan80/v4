@@ -42,26 +42,15 @@ const DropdownNav = ({
         }
     }, [dropdownIsOpen, setDropdownIsOpen])
 
-    // ${mixins.flexCenter};
-    // justify-content: center;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // height: 100vh;
-    // background-color: var(--dropmenu-fill);
-    // transform: translateY(-100%);
-    // //transition: transform 300ms ease-in-out;
-
     const navStyles =
-        'flex absolute top-0 left-0 w-full h-screen bg-black transition-transform ease-in-out duration-300'
+        'flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav'
 
     return (
         <nav
             className={`${navStyles} ${
                 dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'
             }`}>
-            <ol>
+            <ol className=''>
                 {navLinks.map(({ name, url }, index) => (
                     <li
                         key={index}
