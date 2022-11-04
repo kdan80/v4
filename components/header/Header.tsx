@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Nav from './Nav'
 import Hamburger from './Hamburger'
+import DropdownNav from './DropdownNav'
 import config from 'config/config'
 
 const Header = () => {
@@ -21,6 +22,11 @@ const Header = () => {
             </Link>
 
             <Nav navLinks={config.navLinks} />
+            <DropdownNav
+                navLinks={config.navLinks}
+                dropdownIsOpen={dropdownIsOpen}
+                setDropdownIsOpen={setDropdownIsOpen}
+            />
             <Hamburger
                 dropdownIsOpen={dropdownIsOpen}
                 setDropdownIsOpen={setDropdownIsOpen}
