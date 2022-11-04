@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
     content: [
         './pages/**/*.{html,js,ts,jsx,tsx}',
@@ -10,8 +13,22 @@ module.exports = {
                 img: "url('/images/background.webp')",
             },
             fontFamily: {
-                sans: ['Poppins', 'Roboto', 'Arial', 'sans', 'sans-serif'],
-                mono: ['Roboto Mono', 'Hack', 'SF Mono', 'mono', 'monospace'],
+                sans: [
+                    'Poppins',
+                    'Roboto',
+                    'Arial',
+                    'sans',
+                    'sans-serif',
+                    defaultTheme.fontFamily.sans,
+                ],
+                mono: [
+                    'SF Mono',
+                    'Roboto Mono',
+                    'Hack',
+                    'mono',
+                    'monospace',
+                    defaultTheme.fontFamily.mono,
+                ],
             },
         },
     },
