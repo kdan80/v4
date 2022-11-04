@@ -27,6 +27,8 @@ const Layout = ({ children, location }: Props) => {
                     <Header />
                 </>
             )}
+
+            {is404 && <div>404 Not Found</div>}
         </div>
     )
 }
