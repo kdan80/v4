@@ -1,7 +1,8 @@
 import React from 'react'
 import DocumentHeader from 'components/DocumentHeader'
+import Section from 'components/sections/Section'
 
-type Props = {
+interface Props {
     location?: string
     children: React.ReactNode
 }
@@ -12,7 +13,7 @@ const Layout = ({ children, location }: Props) => {
     const [isLoading, setIsLoading] = React.useState<boolean>(isHome)
 
     return (
-        <div className='flex justify-center items-center min-h-screen border-2'>
+        <div className='min-h-screen'>
             <DocumentHeader />
             {/* Background image for the entire site */}
 
