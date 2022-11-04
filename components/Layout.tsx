@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import DocumentHeader from 'components/DocumentHeader'
 
 type Props = {
     children: React.ReactNode
@@ -8,6 +8,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
     return (
         <div className=''>
+            <DocumentHeader />
             {/* Background image for the entire site */}
             <div className='bg-img w-screen h-screen bg-no-repeat bg-cover bg-fixed' />
         </div>
