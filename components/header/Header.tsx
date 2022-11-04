@@ -1,9 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import Nav from './Nav'
+import Hamburger from './Hamburger'
 import config from 'config/config'
 
 const Header = () => {
+    const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
+
     return (
         <header className='fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg'>
             <Link href='#landing'>
@@ -18,6 +21,10 @@ const Header = () => {
             </Link>
 
             <Nav navLinks={config.navLinks} />
+            <Hamburger
+                dropdownIsOpen={dropdownIsOpen}
+                setDropdownIsOpen={setDropdownIsOpen}
+            />
         </header>
     )
 }

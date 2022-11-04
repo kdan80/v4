@@ -15,7 +15,7 @@
     "jsxBracketSameLine": false,
     "jsxSingleQuote": true,
     "htmlWhitespaceSensitivity": "css",
-    "singleAttributePerLine": false,
+    "singleAttributePerLine": true,
     "endOfLine": "lf",
     "overrides": [
         {
