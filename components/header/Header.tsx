@@ -1,23 +1,23 @@
 import React from 'react'
 import Link from 'next/link'
+import Nav from './Nav'
 import config from 'config/config'
 
 const Header = () => {
     return (
-        <header className='fixed top-0 h-20 w-full py-0 px-4 md:px-12 flex justify-between items-center border-2'>
+        <header className='fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg'>
             <Link href='#landing'>
                 <div>
-                    <span>
-                        &lt;/&gt; <span>kieran dansey</span>
+                    <span className='text-hero'>
+                        &lt;/&gt;{' '}
+                        <span className='text-white hover:text-hero transition ease-in-out duration-500'>
+                            kieran dansey
+                        </span>
                     </span>
                 </div>
             </Link>
 
-            <nav className='flex'>
-                <div>Link 1</div>
-                <div>Link 2</div>
-                <div>Link 3</div>
-            </nav>
+            <Nav navLinks={config.navLinks} />
         </header>
     )
 }
