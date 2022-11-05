@@ -1,12 +1,13 @@
 import Layout from 'components/Layout'
+import Section from 'components/sections/Section'
 
 export default function Home() {
     return (
         <Layout>
-            <div>Page 1</div>
-            <div>Page 2</div>
-            <div>Page 3</div>
-            <div>Page 4</div>
+            <Section>Page 1</Section>
+            <Section>Page 2</Section>
+            <Section>Page 3</Section>
+            <Section>Page 4</Section>
         </Layout>
     )
 }

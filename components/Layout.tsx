@@ -25,6 +25,7 @@ const Layout = ({ children, location }: Props) => {
             ) : (
                 <>
                     <Header />
+                    {children}
                 </>
             )}
 

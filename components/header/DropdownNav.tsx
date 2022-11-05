@@ -33,9 +33,10 @@ const DropdownNav = ({
 
         window.addEventListener('resize', onResize)
 
+        // Disable scrolling when the dropdown is open
         dropdownIsOpen
-            ? document.body.classList.add('disable-scroll')
-            : document.body.classList.remove('disable-scroll')
+            ? document.body.classList.add('overflow-hidden')
+            : document.body.classList.remove('overflow-hidden')
 
         return () => {
             window.removeEventListener('resize', onResize)
