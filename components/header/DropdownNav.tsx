@@ -1,5 +1,5 @@
 import React, { SetStateAction } from 'react'
-import Link from 'next/link'
+import NavLink from './NavLink'
 
 type NavLinks = {
     name: string
@@ -42,20 +42,22 @@ const DropdownNav = ({
         }
     }, [dropdownIsOpen, setDropdownIsOpen])
 
-    const navStyles =
-        'flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav'
-
     return (
         <nav
-            className={`${navStyles} ${
-                dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'
-            }`}>
-            <ol className=''>
+            // prettier-ignore
+            className={`flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav ${dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+            <ol className='flex flex-col gap-6'>
                 {navLinks.map(({ name, url }, index) => (
                     <li
                         key={index}
-                        onClick={() => setDropdownIsOpen(false)}>
-                        <Link href={url}>{name}</Link>
+                        onClick={() => setDropdownIsOpen(false)}
+                        // prettier-ignore
+                        className={`-ml-[25rem] opacity-0  ${dropdownIsOpen && `ml-0 opacity-100 transition-all ease-in-out duration-[250ms] delay-[${(index + 1) * 75 + 200}ms]`}`}>
+                        <NavLink
+                            index={index + 1}
+                            name={name}
+                            url={url}
+                        />
                     </li>
                 ))}
             </ol>
