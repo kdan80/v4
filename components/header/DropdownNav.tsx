@@ -1,5 +1,6 @@
 import React, { SetStateAction } from 'react'
 import NavLink from './NavLink'
+import { motion } from 'framer-motion'
 
 type NavLinks = {
     name: string
@@ -10,6 +11,35 @@ interface Props {
     navLinks: NavLinks[]
     dropdownIsOpen: boolean
     setDropdownIsOpen: React.Dispatch<SetStateAction<boolean>>
+}
+
+// Framer Animations
+const navLinkList = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            delayChildren: 0.2,
+            staggerChildren: 0.075,
+        },
+    },
+}
+
+const navLinkItem = {
+    initial: {
+        opacity: 0,
+        translateX: '-7.5rem',
+    },
+    animate: {
+        opacity: 1,
+        translateX: 0,
+        transition: {
+            type: 'spring',
+            bounce: 0.4,
+        },
+    },
 }
 
 const DropdownNav = ({
@@ -23,7 +53,7 @@ const DropdownNav = ({
 
     React.useEffect(() => {
         setComponentIsMounted(true)
-        // innerWidth should be >= to --bp-sm which is set in src/styles/variables.js
+        // innerWidth should be >= to the Hamburger.tsx hidden breakpoint
         const onResize = (e: UIEvent) => {
             if (!e.currentTarget) return
             if (window.innerWidth >= 768) {
@@ -43,25 +73,32 @@ const DropdownNav = ({
         }
     }, [dropdownIsOpen, setDropdownIsOpen])
 
+    const animate = (index: number) => {
+        return index * 75 + 200
+    }
+
     return (
         <nav
             // prettier-ignore
             className={`flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav ${dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-            <ol className='flex flex-col gap-6'>
+            <motion.ol
+                className='flex flex-col gap-6'
+                variants={navLinkList}
+                initial='initial'
+                animate={dropdownIsOpen ? 'animate' : undefined}>
                 {navLinks.map(({ name, url }, index) => (
-                    <li
+                    <motion.li
                         key={index}
-                        onClick={() => setDropdownIsOpen(false)}
-                        // prettier-ignore
-                        className={`-ml-[25rem] opacity-0  ${dropdownIsOpen && `ml-0 opacity-100 transition-all ease-in-out duration-[250ms] delay-[${(index + 1) * 75 + 200}ms]`}`}>
+                        variants={navLinkItem}
+                        onClick={() => setDropdownIsOpen(false)}>
                         <NavLink
                             index={index + 1}
                             name={name}
                             url={url}
                         />
-                    </li>
+                    </motion.li>
                 ))}
-            </ol>
+            </motion.ol>
         </nav>
     )
 }
