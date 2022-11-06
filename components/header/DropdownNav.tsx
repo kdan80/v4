@@ -14,6 +14,15 @@ interface Props {
 }
 
 // Framer Animations
+const navDropdown = {
+    initial: {
+        translateY: '-100%',
+    },
+    animate: {
+        translateY: 0,
+    },
+}
+
 const navLinkList = {
     initial: {
         opacity: 0,
@@ -65,17 +74,27 @@ const DropdownNav = ({
         }
     }, [dropdownIsOpen, setDropdownIsOpen])
 
+    // `flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav ${dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'}`
+
     return (
-        <nav
+        <motion.nav
+            variants={navDropdown}
+            initial='initial'
+            animate={dropdownIsOpen ? 'animate' : undefined}
+            transition={{
+                duration: 0.3,
+                bounce: 0,
+                ease: 'easeInOut',
+            }}
             // prettier-ignore
-            className={`flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav ${dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+            className={`flex justify-center items-center absolute top-0 left-0 w-full h-screen backdrop-blur-md bg-dropdownNav`}>
             <AnimatePresence>
                 {dropdownIsOpen && (
                     <motion.ol
                         className='flex flex-col gap-12'
                         variants={navLinkList}
                         initial='initial'
-                        animate={dropdownIsOpen ? 'animate' : undefined}
+                        animate='animate'
                         exit='exit'>
                         {navLinks.map(({ name, url }, index) => (
                             <motion.li
@@ -92,7 +111,7 @@ const DropdownNav = ({
                     </motion.ol>
                 )}
             </AnimatePresence>
-        </nav>
+        </motion.nav>
     )
 }
 
