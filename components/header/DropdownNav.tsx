@@ -74,8 +74,6 @@ const DropdownNav = ({
         }
     }, [dropdownIsOpen, setDropdownIsOpen])
 
-    // `flex justify-center items-center absolute top-0 left-0 w-full h-screen transition-transform ease-in-out duration-300 backdrop-blur-md bg-dropdownNav ${dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'}`
-
     return (
         <motion.nav
             variants={navDropdown}
