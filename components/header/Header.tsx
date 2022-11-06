@@ -4,12 +4,30 @@ import Nav from './Nav'
 import Hamburger from './Hamburger'
 import DropdownNav from './DropdownNav'
 import config from 'config/config'
+import { motion } from 'framer-motion'
+import useScrollDirection from 'hooks/useScrollDirection'
+
+// Framer motion animations
+const headerVariants = {
+    initial: {},
+    show: {
+        translateY: 0,
+    },
+    hide: {
+        translateY: '-100%',
+    },
+}
 
 const Header = () => {
     const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
+    const scrollDirection = useScrollDirection()
+
+    console.log('SD: ', scrollDirection)
 
     return (
-        <header className='fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg'>
+        <motion.header
+            className='fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg'
+            variants={headerVariants}>
             <Link href='#landing'>
                 <div>
                     <span className='text-hero'>
@@ -31,7 +49,7 @@ const Header = () => {
                 dropdownIsOpen={dropdownIsOpen}
                 setDropdownIsOpen={setDropdownIsOpen}
             />
-        </header>
+        </motion.header>
     )
 }
 

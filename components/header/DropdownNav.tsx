@@ -23,6 +23,12 @@ const navDropdown = {
     },
 }
 
+const navDropdownTransition = {
+    duration: 0.3,
+    bounce: 0,
+    ease: 'easeInOut',
+}
+
 const navLinkList = {
     initial: {
         opacity: 0,
@@ -79,11 +85,7 @@ const DropdownNav = ({
             variants={navDropdown}
             initial='initial'
             animate={dropdownIsOpen ? 'animate' : undefined}
-            transition={{
-                duration: 0.3,
-                bounce: 0,
-                ease: 'easeInOut',
-            }}
+            transition={navDropdownTransition}
             // prettier-ignore
             className={`flex justify-center items-center absolute top-0 left-0 w-full h-screen backdrop-blur-md bg-dropdownNav`}>
             <AnimatePresence>
