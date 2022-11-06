@@ -8,8 +8,13 @@ import { useScroll } from 'framer-motion'
 
 type ScrollDirection = 'up' | 'down' | 'static'
 
-const useScrollDirection = (): string => {
-    const { scrollYProgress } = useScroll()
+interface UseScrollDirection {
+    scrollDirection: ScrollDirection
+    scrollY: number
+}
+
+const useScrollDirection = (): UseScrollDirection => {
+    const { scrollY } = useScroll()
     const [lastScrollY, setLastScrollY] = React.useState<number>(0)
     const [scrollDirection, setScrollDirection] =
         React.useState<ScrollDirection>('static')
@@ -24,7 +29,7 @@ const useScrollDirection = (): string => {
     }
 
     React.useEffect(() => {
-        const unsubscribeY = scrollYProgress.onChange(currentScrollY => {
+        const unsubscribeY = scrollY.onChange(currentScrollY => {
             setLastScrollY(currentScrollY)
             const scrollDirection = getScrollDirection(
                 currentScrollY,
@@ -34,9 +39,9 @@ const useScrollDirection = (): string => {
         })
 
         return () => unsubscribeY()
-    }, [scrollYProgress, lastScrollY])
+    }, [scrollY, lastScrollY])
 
-    return scrollDirection
+    return { scrollDirection, scrollY: lastScrollY }
 }
 
 export default useScrollDirection

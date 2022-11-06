@@ -12,6 +12,7 @@ module.exports = {
             colors: {
                 hero: '#13d5bb',
                 dropdownNav: 'rgba(48, 49, 54,.6)',
+                header: 'rgba(28,29,34, .95)',
             },
             backgroundImage: {
                 img: "url('/images/background.webp')",
