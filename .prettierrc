@@ -2,7 +2,7 @@
     "trailingComma": "es5",
     "useTabs": false,
     "bracketSpacing": true,
-    "printWidth": 80,
+    "printWidth": 100,
     "arrowParens": "avoid",
     "insertPragma": false,
     "requirePragma": false,

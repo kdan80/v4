@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .section-container {
+        @apply max-w-[90vw] md:max-w-[40rem] lg:max-w-[64rem];
+    }
+}
+
 /* Hamburger Button */
 .hamburger {
     display: flex;
@@ -27,8 +33,7 @@
     position: absolute;
     top: calc(50% - 1px);
     transform-origin: center;
-    transition: transform 250ms ease-in-out, width 250ms ease-in-out,
-        opacity 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, width 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
 .top {

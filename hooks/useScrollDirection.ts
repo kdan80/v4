@@ -6,42 +6,33 @@ import { useScroll } from 'framer-motion'
 // with the previous value. If the difference between the values is positive we are scrolling
 // down, if negative we are scrolling up.
 
-type ScrollDirection = 'up' | 'down' | 'static'
+type ScrollDirection = 'up' | 'down'
 
-interface UseScrollDirection {
-    scrollDirection: ScrollDirection
-    scrollY: number
-}
-
-const useScrollDirection = (): UseScrollDirection => {
+const useScrollDirection = (): ScrollDirection => {
     const { scrollY } = useScroll()
-    const [lastScrollY, setLastScrollY] = React.useState<number>(0)
-    const [scrollDirection, setScrollDirection] =
-        React.useState<ScrollDirection>('static')
-
-    const getScrollDirection = (
-        currentScrollY: number,
-        lastScrollY: number
-    ) => {
-        if (currentScrollY > lastScrollY) return 'down'
-        if (currentScrollY < lastScrollY) return 'up'
-        return 'static'
-    }
+    const [scrollDirection, setScrollDirection] = React.useState<ScrollDirection>('up')
 
     React.useEffect(() => {
-        const unsubscribeY = scrollY.onChange(currentScrollY => {
-            setLastScrollY(currentScrollY)
-            const scrollDirection = getScrollDirection(
-                currentScrollY,
-                lastScrollY
-            )
-            setScrollDirection(scrollDirection)
+        let lastScrollY: number = window.pageYOffset
+        let ticking: boolean = false
+
+        const updateScrollDirection = (currentScrollY: number) => {
+            setScrollDirection(currentScrollY > lastScrollY ? 'down' : 'up')
+            lastScrollY = currentScrollY > 0 ? currentScrollY : 0
+            return (ticking = false)
+        }
+
+        const unsubscribeScrollY = scrollY.onChange(currentScrollY => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => updateScrollDirection(currentScrollY))
+                ticking = true
+            }
         })
 
-        return () => unsubscribeY()
-    }, [scrollY, lastScrollY])
+        return () => unsubscribeScrollY()
+    }, [scrollY])
 
-    return { scrollDirection, scrollY: lastScrollY }
+    return scrollDirection
 }
 
 export default useScrollDirection

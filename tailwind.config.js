@@ -3,14 +3,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-    content: [
-        './pages/**/*.{html,js,ts,jsx,tsx}',
-        './components/**/*.{html,js,ts,jsx,tsx}',
-    ],
+    content: ['./pages/**/*.{html,js,ts,jsx,tsx}', './components/**/*.{html,js,ts,jsx,tsx}'],
     theme: {
         extend: {
             colors: {
                 hero: '#13d5bb',
+                heroHover: '#11aa951a',
+                main: '#e0e2ed',
+                mainDarker: '#99a0a4',
                 dropdownNav: 'rgba(48, 49, 54,.6)',
                 header: 'rgba(28,29,34, .95)',
             },
@@ -34,6 +34,10 @@ module.exports = {
                     'monospace',
                     defaultTheme.fontFamily.mono,
                 ],
+            },
+            fontSize: {
+                landingH1: ['clamp(0.875rem, 5vw, 1.125rem)'],
+                landingH2: ['clamp(2.5rem, 8vw, 4rem)'],
             },
         },
     },

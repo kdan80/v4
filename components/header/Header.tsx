@@ -6,15 +6,30 @@ import DropdownNav from './DropdownNav'
 import config from 'config/config'
 import { motion, useAnimationControls } from 'framer-motion'
 import useScrollDirection from 'hooks/useScrollDirection'
+import useScrolledToTop from 'hooks/useScrolledToTop'
+
+// Framer animations for home link
+const homeLinkVariants = {
+    initial: { opacity: 0 },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 0.3,
+            delay: 1,
+            ease: 'easeInOut',
+        },
+    },
+}
 
 const Header = () => {
     const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
-    const { scrollDirection, scrollY } = useScrollDirection()
+    const scrollDirection = useScrollDirection()
+    const scrolledToTop = useScrolledToTop()
     const headerControls = useAnimationControls()
 
     // This effect hook controls the header show/hide and blur animations
     React.useEffect(() => {
-        if (scrollY >= 250 && scrollDirection === 'down') {
+        if (scrollDirection === 'down') {
             headerControls.start({
                 translateY: '-100%',
             })
@@ -23,19 +38,19 @@ const Header = () => {
                 translateY: 0,
             })
         }
-        if (scrollY === 0) {
+        if (scrolledToTop) {
             headerControls.start({
                 boxShadow: '0 2px 16px rgba(0, 0, 0, 0)',
                 backdropFilter: 'blur(0px)',
             })
         }
-        if (scrollY > 250 && scrollDirection === 'up') {
+        if (!scrolledToTop && scrollDirection === 'up') {
             headerControls.start({
                 boxShadow: '0 2px 16px rgba(0, 0, 0, 0.4)',
                 backdropFilter: 'blur(16px)',
             })
         }
-    }, [scrollDirection, scrollY, headerControls])
+    }, [scrollDirection, headerControls, scrolledToTop])
 
     return (
         <motion.header
@@ -45,16 +60,19 @@ const Header = () => {
             transition={{
                 duration: 0.4,
             }}>
-            <Link href='#landing'>
-                <div>
+            <motion.div
+                variants={homeLinkVariants}
+                initial='initial'
+                animate='animate'>
+                <Link href='#landing'>
                     <span className='text-hero'>
                         &lt;/&gt;{' '}
                         <span className='text-white hover:text-hero transition ease-in-out duration-500'>
                             kieran dansey
                         </span>
                     </span>
-                </div>
-            </Link>
+                </Link>
+            </motion.div>
 
             <Nav navLinks={config.navLinks} />
             <DropdownNav
