@@ -2,6 +2,7 @@ import React from 'react'
 import DocumentHeader from 'components/DocumentHeader'
 import Section from 'components/sections/Section'
 import Header from 'components/header/Header'
+import SocialsList from './socialslist/SocialsList'
 
 interface Props {
     location?: string
@@ -26,6 +27,7 @@ const Layout = ({ children, location }: Props) => {
                 <>
                     <Header />
                     {children}
+                    <SocialsList />
                 </>
             )}
 

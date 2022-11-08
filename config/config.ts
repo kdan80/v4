@@ -1,6 +1,14 @@
-interface NavLink {
+import React from 'react'
+import { Github, LinkedIn, Codepen } from 'components/icons'
+
+type NavLink = {
     name: string
     url: string
+}
+
+type socialLink = {
+    url: string
+    icon: React.FC
 }
 
 interface Config {
@@ -12,6 +20,7 @@ interface Config {
         siteUrl: string
         image: string
     }
+    socialLinks: socialLink[]
     navLinks: NavLink[]
 }
 
@@ -22,6 +31,7 @@ const config: Config = {
         'HTML',
         'JavaScript (ES6+)',
         'CSS/SASS',
+        'Tailwind',
         'React',
         'Next.js',
         'Node.js/Express',
@@ -39,6 +49,21 @@ const config: Config = {
         siteUrl: 'https://kierandansey.co.uk',
         image: '/images/og.webp',
     },
+
+    socialLinks: [
+        {
+            url: 'https://github.com/kdan80',
+            icon: Github,
+        },
+        {
+            url: 'https://linkedin.com/in/kdansey80',
+            icon: LinkedIn,
+        },
+        {
+            url: 'https://codepen.io/kdan80',
+            icon: Codepen,
+        },
+    ],
 
     navLinks: [
         {
