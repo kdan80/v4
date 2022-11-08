@@ -16,7 +16,8 @@ const Icon = ({ children }: Props) => {
                 fill: '#13d5bb',
             }}
             transition={{
-                duration: 0.4,
+                ease: 'easeInOut',
+                duration: 0.3,
                 bounce: 0,
             }}
             className='h-5 w-5 cursor-pointer md:h-[22px] md:w-[22px]'

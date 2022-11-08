@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useAnimationControls } from 'framer-motion'
 import config from 'config/config'
 import SocialsListItem from './SocialsListItem'
 
@@ -38,23 +38,47 @@ const socialsListItemVariants = {
     },
 }
 
-const SocialsList = () => {
+interface Props {
+    scrolledToTop: boolean
+}
+
+const SocialsList = ({ scrolledToTop }: Props) => {
+    const socialsListControls = useAnimationControls()
+
+    React.useEffect(() => {
+        if (!scrolledToTop) {
+            socialsListControls.start({
+                translateY: '100%',
+            })
+        } else {
+            socialsListControls.start({
+                translateY: 0,
+            })
+        }
+        console.log('top: ', scrolledToTop)
+    }, [scrolledToTop, socialsListControls])
+
     return (
-        <motion.ol
-            className='fixed bottom-0 flex justify-start items-center gap-14 md:gap-10  py-0 px-[5vw] md:px-12 h-20'
-            variants={socialsListVariants}
-            initial='initial'
-            animate='animate'>
-            {config.socialLinks.map(({ url, icon: Icon }, index) => (
-                <motion.li
-                    key={index}
-                    variants={socialsListItemVariants}>
-                    <SocialsListItem url={url}>
-                        <Icon />
-                    </SocialsListItem>
-                </motion.li>
-            ))}
-        </motion.ol>
+        <motion.div
+            className='fixed bottom-0 md:left-0'
+            animate={socialsListControls}
+            transition={{ duration: 0.3 }}>
+            <motion.ol
+                className='flex justify-start items-center gap-14 md:gap-10  py-0 px-[5vw] md:px-12 h-20'
+                variants={socialsListVariants}
+                initial='initial'
+                animate='animate'>
+                {config.socialLinks.map(({ url, icon: Icon }, index) => (
+                    <motion.li
+                        key={index}
+                        variants={socialsListItemVariants}>
+                        <SocialsListItem url={url}>
+                            <Icon />
+                        </SocialsListItem>
+                    </motion.li>
+                ))}
+            </motion.ol>
+        </motion.div>
     )
 }
 

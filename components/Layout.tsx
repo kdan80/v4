@@ -3,6 +3,7 @@ import DocumentHeader from 'components/DocumentHeader'
 import Section from 'components/sections/Section'
 import Header from 'components/header/Header'
 import SocialsList from './socialslist/SocialsList'
+import useScrolledToTop from 'hooks/useScrolledToTop'
 
 interface Props {
     location?: string
@@ -13,9 +14,10 @@ const Layout = ({ children, location }: Props) => {
     const isHome = location === '/'
     const is404 = location === '404'
     const [isLoading, setIsLoading] = React.useState<boolean>(isHome)
+    const scrolledToTop = useScrolledToTop()
 
     return (
-        <div className='min-h-screen font-sans text-white'>
+        <div className='min-h-screen flex justify-center items-center font-sans text-white'>
             <DocumentHeader />
 
             {/* Background image for the entire site */}
@@ -25,9 +27,9 @@ const Layout = ({ children, location }: Props) => {
                 <div className='text-red-600'>Loader</div>
             ) : (
                 <>
-                    <Header />
-                    {children}
-                    <SocialsList />
+                    <Header scrolledToTop={scrolledToTop} />
+                    <main>{children}</main>
+                    <SocialsList scrolledToTop={scrolledToTop} />
                 </>
             )}
 

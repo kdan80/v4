@@ -21,10 +21,13 @@ const homeLinkVariants = {
     },
 }
 
-const Header = () => {
+interface Props {
+    scrolledToTop: boolean
+}
+
+const Header = ({ scrolledToTop }: Props) => {
     const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
     const scrollDirection = useScrollDirection()
-    const scrolledToTop = useScrolledToTop()
     const headerControls = useAnimationControls()
 
     // This effect hook controls the header show/hide and blur animations
