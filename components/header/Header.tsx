@@ -8,7 +8,7 @@ import { motion, useAnimationControls } from 'framer-motion'
 import useScrollDirection from 'hooks/useScrollDirection'
 import useScrolledToTop from 'hooks/useScrolledToTop'
 
-// Framer animations for home link
+// Framer animations for home link, should be the same as hamburgerVariants in Hamburger.tsx
 const homeLinkVariants = {
     initial: { opacity: 0 },
     animate: {
