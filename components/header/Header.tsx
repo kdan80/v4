@@ -58,7 +58,7 @@ const Header = ({ scrolledToTop }: Props) => {
     return (
         <motion.header
             // prettier-ignore
-            className={`fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg`}
+            className={`fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg z-20`}
             animate={headerControls}
             transition={{
                 duration: 0.4,

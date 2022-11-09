@@ -13,9 +13,7 @@ const Hamburger = ({ dropdownIsOpen, setDropdownIsOpen }: Props) => {
     return (
         <button
             className={
-                dropdownIsOpen
-                    ? 'md:hidden hamburger isOpen'
-                    : 'md:hidden hamburger'
+                dropdownIsOpen ? 'md:hidden hamburger isOpen z-30' : 'md:hidden hamburger z-30'
             }
             onClick={handleClick}
             type='button'>

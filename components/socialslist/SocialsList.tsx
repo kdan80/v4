@@ -59,7 +59,7 @@ const SocialsList = ({ scrolledToTop }: Props) => {
     }, [scrolledToTop, socialsListControls])
 
     return (
-        <motion.div
+        <motion.aside
             className='fixed bottom-0 md:left-0'
             animate={socialsListControls}
             transition={{ duration: 0.3 }}>
@@ -78,7 +78,7 @@ const SocialsList = ({ scrolledToTop }: Props) => {
                     </motion.li>
                 ))}
             </motion.ol>
-        </motion.div>
+        </motion.aside>
     )
 }
 

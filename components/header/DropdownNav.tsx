@@ -49,11 +49,7 @@ const navLinkList = {
     },
 }
 
-const DropdownNav = ({
-    navLinks,
-    dropdownIsOpen,
-    setDropdownIsOpen,
-}: Props) => {
+const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => {
     // For some reason the DropDown animation is triggering as soon as the page loads
     // I have added this flag to disable this animation until after the component has loaded
     const [componentIsMounted, setComponentIsMounted] = React.useState(false)
