@@ -10,7 +10,7 @@ interface Props {
 
 const NumberedHeading = ({ overline = false, index, children }: Props) => {
     return (
-        <div
+        <motion.div
             className='flex gap-2 md:gap-5'
             {...scrollFade}>
             <h2 className='flex gap-2 text-2xl whitespace-nowrap text-main font-semibold md:gap-[0.8rem] md:text-[1.8rem]'>
@@ -24,7 +24,7 @@ const NumberedHeading = ({ overline = false, index, children }: Props) => {
                     <span className='h-px w-[100%] ml-[10px] bg-hero md:max-w-[300px]' />
                 </div>
             </h2>
-        </div>
+        </motion.div>
     )
 }
 
