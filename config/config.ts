@@ -29,11 +29,11 @@ const config: Config = {
 
     skills: [
         'HTML',
-        'JavaScript (ES6+)',
         'CSS/SASS',
         'Tailwind',
-        'React',
-        'Next.js',
+        'JavaScript (ES6+)',
+        'React/Next.js',
+        'Typescript',
         'Node.js/Express',
         'Python/Django',
         'Linux/Bash',

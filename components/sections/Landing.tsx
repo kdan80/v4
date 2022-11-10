@@ -2,6 +2,7 @@ import React from 'react'
 import Section from './Section'
 import { motion, useAnimationControls } from 'framer-motion'
 import Link from 'next/link'
+import BigButton from 'components/BigButton'
 
 const landingPageContainerVariants = {
     animate: {
@@ -90,12 +91,8 @@ const Landing = () => {
                 </motion.p>
                 <motion.div
                     {...itemProps}
-                    className='mt-12'>
-                    <Link
-                        href='/#projects'
-                        className='text-hero w-[12.5rem] border border-hero rounded  text-sm font-mono px-7 py-5 transition-all duration-300 ease-in-out hover:bg-heroHover focus:bg-heroHover active:bg-heroHover'>
-                        View My Projects
-                    </Link>
+                    className='mt-10'>
+                    <BigButton url={'/#projects'}>View My Projects</BigButton>
                 </motion.div>
             </motion.div>
         </Section>

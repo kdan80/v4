@@ -2,6 +2,7 @@ import Layout from 'components/Layout'
 import Section from 'components/sections/Section'
 import Landing from 'components/sections/Landing'
 import About from 'components/sections/About'
+import Contact from 'components/sections/Contact'
 
 export default function Home() {
     return (
@@ -9,7 +10,7 @@ export default function Home() {
             <Landing />
             <About />
             <Section>Page 3</Section>
-            <Section>Page 4</Section>
+            <Contact />
         </Layout>
     )
 }
