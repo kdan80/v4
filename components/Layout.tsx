@@ -4,6 +4,7 @@ import Section from 'components/sections/Section'
 import Header from 'components/header/Header'
 import SocialsList from './socialslist/SocialsList'
 import useScrolledToTop from 'hooks/useScrolledToTop'
+import Footer from 'components/Footer'
 
 interface Props {
     location?: string
@@ -28,7 +29,10 @@ const Layout = ({ children, location }: Props) => {
             ) : (
                 <>
                     <Header scrolledToTop={scrolledToTop} />
-                    <main>{children}</main>
+                    <main>
+                        {children}
+                        <Footer />
+                    </main>
                     <SocialsList scrolledToTop={scrolledToTop} />
                 </>
             )}
