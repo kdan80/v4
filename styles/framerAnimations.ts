@@ -23,3 +23,13 @@ export const scrollFade = {
         amount: 0.8,
     },
 }
+
+export const scrollFade20 = {
+    variants: scrollFadeVariants,
+    initial: 'fadeOut',
+    whileInView: 'fadeIn',
+    viewport: {
+        margin: '-20px 0px -20px 0px',
+        amount: 0.5,
+    },
+}
