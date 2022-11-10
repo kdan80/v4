@@ -4,6 +4,8 @@ import config from 'config/config'
 import { motion } from 'framer-motion'
 import { scrollFade } from 'styles/framerAnimations'
 import NumberedHeading from 'components/NumberedHeading'
+import BigButton from 'components/BigButton'
+import Paragraph from 'components/Paragraph'
 
 type SectionProps = {
     id: string
@@ -57,17 +59,17 @@ const Contact = () => {
                     Get In Touch
                 </motion.h2>
 
-                <motion.p {...scrollFade}>
+                <Paragraph>
                     Thank you for taking the time to visit my site. If you have a project you wish
                     to discuss, an opportunity for me, or would just like some more information,
                     please do not hesitate to contact me.
-                </motion.p>
+                </Paragraph>
 
-                <motion.a
-                    href={`mailto:${email}`}
-                    {...scrollFade}>
+                <BigButton
+                    styles='mt-10'
+                    url={`mailto:${email}`}>
                     Contact Me
-                </motion.a>
+                </BigButton>
             </motion.div>
         </Section>
     )

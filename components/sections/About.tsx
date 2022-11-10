@@ -6,6 +6,7 @@ import config from 'config/config'
 import { motion } from 'framer-motion'
 import { scrollFade } from 'styles/framerAnimations'
 import NumberedHeading from 'components/NumberedHeading'
+import Paragraph from 'components/Paragraph'
 
 // const StyledSection =
 
@@ -63,29 +64,21 @@ const About = () => {
             <motion.div className='section-container md:w-[70%] flex flex-col gap-6'>
                 <NumberedHeading index={1}>About Me</NumberedHeading>
 
-                <motion.p
-                    className='text-lg text-mainDarker'
-                    {...scrollFade}>
+                <Paragraph>
                     Hello! My name is Kieran and I enjoy creating things that live on the internet.
                     My interest in web development started back in 2005 when I was making custom
                     themes for myspace profiles. Fast-forward to today and I enjoy building
                     full-featured websites and apps using modern design principles and tools.
-                </motion.p>
+                </Paragraph>
 
-                <motion.p
-                    className='text-lg text-mainDarker'
-                    {...scrollFade}>
+                <Paragraph>
                     I am a self-taught developer from Tayside, Scotland and I am currently looking
                     to secure a position as a junior developer to further my own knowledge and
                     abilities. My ultimate career aspiration is to become a backend, or full-stack
                     engineer, and a project leader.
-                </motion.p>
+                </Paragraph>
 
-                <motion.p
-                    className='text-lg text-mainDarker'
-                    {...scrollFade}>
-                    Here are some of the tools and technologies that I use;
-                </motion.p>
+                <Paragraph>Here are some of the tools and technologies that I use;</Paragraph>
 
                 <motion.ul
                     className='flex flex-col flex-wrap max-w-[600px] max-h-[250px] md:max-h-[200px] gap-2 mt-4'

@@ -89,11 +89,12 @@ const Landing = () => {
                     I am a freelance web developer, and occasional designer, with a passion for
                     building exceptional digital experiences.
                 </motion.p>
-                <motion.div
-                    {...itemProps}
-                    className='mt-10'>
-                    <BigButton url={'/#projects'}>View My Projects</BigButton>
-                </motion.div>
+
+                <BigButton
+                    styles='mt-10'
+                    url={'/#projects'}>
+                    View My Projects
+                </BigButton>
             </motion.div>
         </Section>
     )
