@@ -14,10 +14,12 @@ const BigButton = ({ url, children, styles }: Props) => {
         <motion.button
             {...scrollFade}
             type='button'
-            className={`text-hero w-[12.5rem] border border-hero rounded  text-sm font-mono px-7 py-5 transition-all duration-300 ease-in-out hover:bg-heroHover focus:bg-heroHover active:bg-heroHover ${styles}`}>
+            className={`text-hero border border-hero rounded text-sm leading-[1] font-mono px-7 py-5 transition-all duration-300 ease-in-out hover:bg-heroHover focus:bg-heroHover active:bg-heroHover ${styles}`}
+        >
             <Link
                 target='_blank'
-                href={url}>
+                href={url}
+            >
                 {children}
             </Link>
         </motion.button>

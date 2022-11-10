@@ -11,7 +11,7 @@
     "proseWrap": "always",
     "quoteProps": "as-needed",
     "singleQuote": true,
-    "bracketSameLine": true,
+    "bracketSameLine": false,
     "jsxBracketSameLine": false,
     "jsxSingleQuote": true,
     "htmlWhitespaceSensitivity": "css",

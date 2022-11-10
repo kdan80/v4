@@ -38,6 +38,7 @@ module.exports = {
             fontSize: {
                 landingH1: ['clamp(0.875rem, 5vw, 1.125rem)'],
                 landingH2: ['clamp(2.5rem, 8vw, 4rem)'],
+                contactH2: ['clamp(1.5rem, 5vw, 2.5rem)'],
             },
             gridTemplateColumns: {
                 skills: 'repeat(2, minmax(140px, 200px)',
