@@ -90,11 +90,11 @@ const Landing = () => {
                     building exceptional digital experiences.
                 </motion.p>
 
-                <BigButton
-                    styles='mt-10'
-                    url={'/#projects'}>
-                    View My Projects
-                </BigButton>
+                <motion.div
+                    className='mt-8'
+                    {...itemProps}>
+                    <BigButton url={'/#projects'}>View My Projects</BigButton>
+                </motion.div>
             </motion.div>
         </Section>
     )
