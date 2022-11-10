@@ -9,7 +9,7 @@ const Section = ({ children, id }: Props) => {
     return (
         <section
             id={id}
-            className='flex justify-center items-center h-screen px-[5vw] w-screen border'>
+            className='flex justify-center items-center min-h-screen px-[5vw] w-screen'>
             {children}
         </section>
     )
