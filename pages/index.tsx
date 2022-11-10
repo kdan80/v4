@@ -7,7 +7,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 
 interface Props {
-    projects: project[]
+    projects: Project[]
 }
 
 const Home = ({ projects }: Props) => {

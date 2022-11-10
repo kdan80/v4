@@ -1,4 +1,4 @@
-type project = {
+type Project = {
     frontmatter: {
         date: string
         title: string

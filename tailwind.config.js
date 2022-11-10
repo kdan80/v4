@@ -42,6 +42,7 @@ module.exports = {
             },
             gridTemplateColumns: {
                 skills: 'repeat(2, minmax(140px, 200px)',
+                project: 'repeat(12, 1fr)',
             },
         },
     },
