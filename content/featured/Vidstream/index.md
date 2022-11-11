@@ -2,6 +2,7 @@
 date: '4'
 title: 'Vidstream'
 cover: '/featured/vidstream.webp'
+coverMob: '/featured/vidstream_640.webp'
 github: 'https://github.com/kdan80/vidstream'
 external: 'https://github.com/kdan80/vidstream'
 tech:

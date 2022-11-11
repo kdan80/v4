@@ -1,26 +1,19 @@
 import React from 'react'
-import { scrollFade20 } from 'styles/framerAnimations'
 import Link from 'next/link'
-import { Github, External } from 'components/icons'
 import Image from 'next/image'
+import { Github, External } from 'components/icons'
 
 interface Props {
     project: Project
     reverseLayout: boolean
 }
 
-const Project = ({ project, reverseLayout }: Props) => {
+const DesktopUI = ({ project, reverseLayout }: Props) => {
     const { frontmatter, content } = project
     const { external, title, tech, github, cover } = frontmatter
 
-    React.useEffect(() => {
-        console.log(`${title}: `, cover)
-    }, [cover, title])
-
     return (
-        <li
-            className={`border flex items-center ${reverseLayout ? 'flex-row-reverse' : undefined}`}
-        >
+        <li className={``}>
             <div>
                 <Link
                     href={external}
@@ -39,21 +32,24 @@ const Project = ({ project, reverseLayout }: Props) => {
                 </Link>
             </div>
 
-            <div className={`flex flex-col  ${reverseLayout ? 'items-start' : 'items-end'}`}>
+            <div className={``}>
                 <h3>Featured Project</h3>
                 <h2>
                     <Link href={external}>{title}</Link>
                 </h2>
                 <p
-                    className={`${reverseLayout ? 'text-start' : 'text-end'}`}
+                    className={``}
                     dangerouslySetInnerHTML={{ __html: content }}
                 />
-                <ul className={`flex ${reverseLayout ? 'justify-end' : 'justify-start'}`}>
+                <ul className={``}>
                     {tech.map((tech, index) => (
                         <li key={index}>{tech}</li>
                     ))}
                 </ul>
-                <div>
+                <div
+                    // prettier-ignore
+                    className={`flex gap-4`}
+                >
                     <Link
                         href={github}
                         rel='noreferrer'
@@ -74,4 +70,4 @@ const Project = ({ project, reverseLayout }: Props) => {
     )
 }
 
-export default Project
+export default DesktopUI

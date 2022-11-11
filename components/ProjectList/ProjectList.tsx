@@ -5,7 +5,7 @@ interface Props {
 }
 
 const ProjectList = ({ children }: Props) => {
-    return <ul className='flex flex-col gap-6 md:gap-24'>{children}</ul>
+    return <ul className='flex flex-col gap-8 md:gap-24'>{children}</ul>
 }
 
 export default ProjectList
