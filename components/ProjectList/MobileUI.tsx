@@ -42,7 +42,7 @@ const MobileUI = ({ project }: Props) => {
                     className={`text-sm text-[#eaebef]`}
                     dangerouslySetInnerHTML={{ __html: content }}
                 />
-                <ul className={`flex flex-wrap gap-x-4 gap-y-1 overflow-hidden text-[#aaabad]`}>
+                <ul className={`flex flex-wrap gap-x-4 gap-y-2 overflow-hidden text-[#aaabad]`}>
                     {tech.map((tech, index) => (
                         <li
                             className={`text-sm whitespace-nowrap`}

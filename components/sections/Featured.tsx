@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Featured = ({ projects }: Props) => {
-    const [isMobile, setIsMobile] = React.useState<boolean>(true)
+    const [isMobile, setIsMobile] = React.useState<boolean>(false)
 
     return (
         <Section id='projects'>

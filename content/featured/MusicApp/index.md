@@ -3,6 +3,7 @@ date: '1'
 title: 'MusicApp'
 cover: '/featured/musicapp.webp'
 coverMob: '/featured/musicapp_640.webp'
+blurData: '/featured/musicapp_blur.webp'
 github: 'https://github.com/kdan80/musicapp-webclient'
 external: 'https://kdan80-musicapp.herokuapp.com'
 tech:

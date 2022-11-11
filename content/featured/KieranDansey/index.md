@@ -3,6 +3,7 @@ date: '5'
 title: 'kierandansey.co.uk'
 cover: '/featured/kierandansey.webp'
 coverMob: '/featured/kierandansey_640.webp'
+blurData: '/featured/kierandansey_blur.webp'
 github: 'https://github.com/kdan80/v1'
 external: 'https://www.kierandansey.co.uk'
 tech:
