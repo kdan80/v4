@@ -11,6 +11,7 @@ module.exports = {
                 heroHover: '#11aa951a',
                 main: '#e0e2ed',
                 mainDarker: '#99a0a4',
+                bgMainLight: 'rgb(38, 39, 42)',
                 dropdownNav: 'rgba(48, 49, 54,.6)',
                 header: 'rgba(28,29,34, .95)',
             },
