@@ -68,14 +68,14 @@ const Header = ({ scrolledToTop }: Props) => {
                 initial='initial'
                 animate='animate'
             >
-                <Link href='#landing'>
+                <a href='#landing'>
                     <span className='text-hero'>
                         &lt;/&gt;{' '}
                         <span className='text-light-300 md:text-light-200 hover:text-hero transition ease-in-out duration-500'>
                             kieran dansey
                         </span>
                     </span>
-                </Link>
+                </a>
             </motion.div>
 
             <Nav navLinks={config.navLinks} />

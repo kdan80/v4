@@ -99,7 +99,9 @@ const Landing = () => {
                     className='mt-8'
                     {...itemProps}
                 >
-                    <BigButton url={'/#projects'}>View My Projects</BigButton>
+                    <BigButton>
+                        <Link href='#projects'>View My Projects</Link>
+                    </BigButton>
                 </motion.div>
             </motion.div>
         </Section>

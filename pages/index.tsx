@@ -12,7 +12,7 @@ interface Props {
 
 const Home = ({ projects }: Props) => {
     return (
-        <Layout>
+        <Layout location='/'>
             <Landing />
             <About />
             <Featured projects={projects} />

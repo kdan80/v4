@@ -6,6 +6,7 @@ import { scrollFade } from 'styles/framerAnimations'
 import NumberedHeading from 'components/NumberedHeading'
 import BigButton from 'components/BigButton'
 import Paragraph from 'components/Paragraph'
+import Link from 'next/link'
 
 const Contact = () => {
     const { email } = config
@@ -33,11 +34,8 @@ const Contact = () => {
                     please do not hesitate to contact me.
                 </Paragraph>
 
-                <BigButton
-                    styles='mt-10'
-                    url={`mailto:${email}`}
-                >
-                    Contact Me
+                <BigButton styles='mt-10'>
+                    <Link href={`mailto:${email}`}>Contact Me</Link>
                 </BigButton>
             </motion.div>
         </Section>

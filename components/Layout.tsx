@@ -1,10 +1,11 @@
 import React from 'react'
 import DocumentHeader from 'components/DocumentHeader'
-import Section from 'components/sections/Section'
+import Loader from './Loader'
 import Header from 'components/header/Header'
 import SocialsList from './socialslist/SocialsList'
 import useScrolledToTop from 'hooks/useScrolledToTop'
 import Footer from 'components/Footer'
+import Link from 'next/link'
 
 interface Props {
     location?: string
@@ -13,7 +14,7 @@ interface Props {
 
 const Layout = ({ children, location }: Props) => {
     const isHome = location === '/'
-    const is404 = location === '404'
+    const is404 = location === '404' && !isHome
     const [isLoading, setIsLoading] = React.useState<boolean>(isHome)
     const scrolledToTop = useScrolledToTop()
 
@@ -24,20 +25,33 @@ const Layout = ({ children, location }: Props) => {
             {/* Background image for the entire site */}
             <div className='fixed top-0 left-0 -z-10 bg-img w-screen h-screen bg-no-repeat bg-cover bg-fixed' />
 
-            {false ? (
-                <div className='text-red-600'>Loader</div>
-            ) : (
-                <>
-                    <Header scrolledToTop={scrolledToTop} />
-                    <main>
-                        {children}
-                        <Footer />
-                    </main>
-                    <SocialsList scrolledToTop={scrolledToTop} />
-                </>
-            )}
+            {
+                // prettier-ignore
+                isLoading && isHome && !is404
+                    ? 
+                        <Loader finishLoading={() => setIsLoading(false)} />
+                    :   !is404 &&
+                        <>
+                            <Header scrolledToTop={scrolledToTop} />
+                            <main>
+                                {children}
+                                <Footer />
+                            </main>
+                            <SocialsList scrolledToTop={scrolledToTop} />
+                        </>
+            }
 
-            {is404 && <div>404 Not Found</div>}
+            {
+                // prettier-ignore
+                is404 && 
+                    <main className='flex flex-col gap-4 text-light-300 md:text-light-200'>
+                        <div className='text-2xl'><span className='text-hero'>404</span> Not Found</div>
+                        <Link
+                            href='/'
+                            className='text-2xl'
+                        >&#10230; <span className='text-xl hover:text-hero transition duration-500 ease-in-out'>Go home</span></Link>
+                    </main>
+            }
         </div>
     )
 }

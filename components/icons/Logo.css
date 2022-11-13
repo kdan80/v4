@@ -1,0 +1,14 @@
+.fill {
+    fill: #c8c9cc;
+    fill-opacity: 0;
+    stroke-opacity: 0;
+    stroke-width: 1;
+    stroke: #c8c9cc;
+}
+
+.left,
+.right,
+.slash {
+    opacity: 0;
+    fill: #10ad98;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 type NavLink = {
@@ -50,12 +49,7 @@ const Nav = ({ navLinks }: Props) => {
                         className=' hover:text-hero transition-all duration-500 ease-in-out'
                         key={index}
                     >
-                        <Link
-                            className=''
-                            href={url}
-                        >
-                            {name}
-                        </Link>
+                        <a href={url}>{name}</a>
                     </motion.li>
                 ))}
             </motion.ol>

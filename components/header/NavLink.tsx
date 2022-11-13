@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 interface Props {
     name: string
@@ -11,12 +10,12 @@ const NavLink = ({ index, name, url }: Props) => {
     return (
         <div className='text-center'>
             <div className='text-hero text-sm'>0{index}.</div>
-            <Link
+            <a
                 className='text-xl text-light-300 md:text-light-200'
                 href={url}
             >
                 {name}
-            </Link>
+            </a>
         </div>
     )
 }
