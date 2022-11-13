@@ -8,6 +8,10 @@
     }
 }
 
+.back-hidden {
+    backface-visibility: hidden;
+}
+
 /* Scrollbar Styles */
 body {
     overflow: overlay;
