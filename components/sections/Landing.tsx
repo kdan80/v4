@@ -100,7 +100,7 @@ const Landing = () => {
                     {...itemProps}
                 >
                     <BigButton>
-                        <Link href='#projects'>View My Projects</Link>
+                        <a href='#projects'>View My Projects</a>
                     </BigButton>
                 </motion.div>
             </motion.div>

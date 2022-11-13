@@ -2,7 +2,6 @@
 date: '2'
 title: 'authy'
 cover: '/featured/authy.webp'
-coverMob: '/featured/authy_640.webp'
 blurData: '/featured/authy_blur.webp'
 github: 'https://github.com/kdan80/authy'
 external: 'https://kdan80.github.io/authy/index.html'
