@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 interface Props {
     children: React.ReactNode
@@ -7,12 +8,13 @@ interface Props {
 
 const SocialsListItem = ({ url, children }: Props) => {
     return (
-        <a
+        <Link
             target='_blank'
             rel='noreferrer'
-            href={url}>
+            href={url}
+        >
             {children}
-        </a>
+        </Link>
     )
 }
 

@@ -18,7 +18,7 @@ const Layout = ({ children, location }: Props) => {
     const scrolledToTop = useScrolledToTop()
 
     return (
-        <div className='relative min-h-screen max-w-screen overflow-x-hidden flex justify-center items-center font-sans text-white'>
+        <div className='relative min-h-screen max-w-screen overflow-x-hidden flex justify-center items-center font-sans text-light-300 md:text-light-200 selection:bg-heroDark selection:text-white'>
             <DocumentHeader />
 
             {/* Background image for the entire site */}

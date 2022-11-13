@@ -62,16 +62,19 @@ const SocialsList = ({ scrolledToTop }: Props) => {
         <motion.aside
             className='fixed bottom-0 md:left-0'
             animate={socialsListControls}
-            transition={{ duration: 0.3 }}>
+            transition={{ duration: 0.3 }}
+        >
             <motion.ol
                 className='flex justify-start items-center gap-14 md:gap-10  py-0 px-[5vw] md:px-12 h-20'
                 variants={socialsListVariants}
                 initial='initial'
-                animate='animate'>
+                animate='animate'
+            >
                 {config.socialLinks.map(({ url, icon: Icon }, index) => (
                     <motion.li
                         key={index}
-                        variants={socialsListItemVariants}>
+                        variants={socialsListItemVariants}
+                    >
                         <SocialsListItem url={url}>
                             <Icon />
                         </SocialsListItem>

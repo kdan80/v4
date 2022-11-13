@@ -12,8 +12,9 @@ const NavLink = ({ index, name, url }: Props) => {
         <div className='text-center'>
             <div className='text-hero text-sm'>0{index}.</div>
             <Link
-                className='text-xl'
-                href={url}>
+                className='text-xl text-light-300 md:text-light-200'
+                href={url}
+            >
                 {name}
             </Link>
         </div>

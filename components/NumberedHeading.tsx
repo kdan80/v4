@@ -17,7 +17,7 @@ const NumberedHeading = ({ overline, index, children }: Props) => {
             <h2
                 // prettier-ignore
                 className={
-                    `flex gap-2  whitespace-nowrap text-main  md:gap-[0.8rem] `
+                    `flex w-full gap-2  whitespace-nowrap text-light-200 md:gap-[0.8rem] `
                 }
             >
                 <div className='flex items-baseline gap-2 md:gap-[0.8rem'>
@@ -40,10 +40,10 @@ const NumberedHeading = ({ overline, index, children }: Props) => {
                 <div
                     // prettier-ignore
                     className={
-                        `h-[100%] w-[300px] flex items-center 
+                        `h-full flex-1 md:w-full lg:w-[300px] flex items-center 
                         ${ overline ? 'hidden' : undefined}`}
                 >
-                    <span className='h-px w-[100%] ml-[10px] bg-hero md:max-w-[300px]' />
+                    <span className='h-px w-full ml-[10px] bg-hero md:max-w-[300px]' />
                 </div>
             </h2>
         </motion.div>

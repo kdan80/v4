@@ -67,32 +67,38 @@ const Landing = () => {
                 className='section-container flex flex-col justify-between gap-6'
                 variants={landingPageContainerVariants}
                 initial='initial'
-                animate={landingPageControls}>
+                animate={landingPageControls}
+            >
                 <motion.h1
                     {...itemProps}
-                    className='text-hero font-mono text-landingH1 mb-2'>
+                    className='text-hero font-mono text-landingH1 mb-2'
+                >
                     Hi, my name is
                 </motion.h1>
                 <motion.h2
                     {...itemProps}
-                    className='font-semibold leading-[.9] text-landingH2 text-main'>
+                    className='font-semibold leading-[.9] text-landingH2 text-light-100'
+                >
                     Kieran Dansey.
                 </motion.h2>
                 <motion.h3
                     {...itemProps}
-                    className='font-semibold leading-[.9] text-landingH2 text-mainDarker'>
+                    className='font-semibold leading-[.9] text-landingH2 text-light-900'
+                >
                     I build things for the web.
                 </motion.h3>
                 <motion.p
                     {...itemProps}
-                    className='md:max-w-[60%] text-mainDarker leading-[1.5rem] text-lg'>
+                    className='md:max-w-[60%] text-light-900 leading-[1.5rem] text-lg'
+                >
                     I am a freelance web developer, and occasional designer, with a passion for
                     building exceptional digital experiences.
                 </motion.p>
 
                 <motion.div
                     className='mt-8'
-                    {...itemProps}>
+                    {...itemProps}
+                >
                     <BigButton url={'/#projects'}>View My Projects</BigButton>
                 </motion.div>
             </motion.div>

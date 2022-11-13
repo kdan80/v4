@@ -61,15 +61,17 @@ const Header = ({ scrolledToTop }: Props) => {
             animate={headerControls}
             transition={{
                 duration: 0.4,
-            }}>
+            }}
+        >
             <motion.div
                 variants={homeLinkVariants}
                 initial='initial'
-                animate='animate'>
+                animate='animate'
+            >
                 <Link href='#landing'>
                     <span className='text-hero'>
                         &lt;/&gt;{' '}
-                        <span className='text-white hover:text-hero transition ease-in-out duration-500'>
+                        <span className='text-light-300 md:text-light-200 hover:text-hero transition ease-in-out duration-500'>
                             kieran dansey
                         </span>
                     </span>

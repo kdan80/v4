@@ -42,15 +42,18 @@ const Nav = ({ navLinks }: Props) => {
                 variants={navLinksListVariants}
                 initial='initial'
                 animate='animate'
-                className='hidden md:flex gap-8'>
+                className='hidden md:flex gap-8'
+            >
                 {navLinks.map(({ name, url }, index) => (
                     <motion.li
                         variants={navLinksItemVariants}
-                        className='hover:text-hero transition-all duration-500 ease-in-out'
-                        key={index}>
+                        className=' hover:text-hero transition-all duration-500 ease-in-out'
+                        key={index}
+                    >
                         <Link
                             className=''
-                            href={url}>
+                            href={url}
+                        >
                             {name}
                         </Link>
                     </motion.li>

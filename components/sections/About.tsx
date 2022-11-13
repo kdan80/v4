@@ -81,13 +81,15 @@ const About = () => {
                 <Paragraph>Here are some of the tools and technologies that I use;</Paragraph>
 
                 <motion.ul
-                    className='flex flex-col flex-wrap max-w-[600px] max-h-[250px] md:max-h-[200px] gap-2 mt-4'
-                    {...scrollFade}>
+                    className='flex flex-col flex-wrap max-w-[600px] max-h-[250px] md:max-h-[200px] gap-2 mt-4 mb-20'
+                    {...scrollFade}
+                >
                     {skills &&
                         skills.map((skill, index) => (
                             <motion.li
-                                className='flex items-center gap-1.5 font-mono text-sm md:text-base text-mainDarker w-[200px] '
-                                key={index}>
+                                className='flex items-center gap-1.5 font-mono text-sm md:text-base text-light-900 w-[200px] '
+                                key={index}
+                            >
                                 <span className='text-hero text-xs'>*</span>
                                 <span>{skill}</span>
                             </motion.li>

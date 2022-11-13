@@ -83,7 +83,9 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
             animate={dropdownIsOpen ? 'animate' : undefined}
             transition={navDropdownTransition}
             // prettier-ignore
-            className={`flex justify-center items-center absolute top-0 left-0 w-full h-screen backdrop-blur-md bg-dropdownNav`}>
+            className='flex justify-center items-center absolute top-0 left-0 w-full h-screen backdrop-blur-md'
+        >
+            <div className='absolute top-0 left-0 bg-dark-500 opacity-60 w-full h-full' />
             <AnimatePresence>
                 {dropdownIsOpen && (
                     <motion.ol
@@ -91,12 +93,14 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
                         variants={navLinkList}
                         initial='initial'
                         animate='animate'
-                        exit='exit'>
+                        exit='exit'
+                    >
                         {navLinks.map(({ name, url }, index) => (
                             <motion.li
                                 key={index}
                                 variants={navLinkList}
-                                onClick={() => setDropdownIsOpen(false)}>
+                                onClick={() => setDropdownIsOpen(false)}
+                            >
                                 <NavLink
                                     index={index + 1}
                                     name={name}

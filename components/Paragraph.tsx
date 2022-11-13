@@ -10,8 +10,9 @@ interface Props {
 const Paragraph = ({ children, styles }: Props) => {
     return (
         <motion.p
-            className={`text-lg text-mainDarker ${styles}`}
-            {...scrollFade}>
+            className={`text-lg text-light-900 ${styles}`}
+            {...scrollFade}
+        >
             {children}
         </motion.p>
     )
