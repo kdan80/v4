@@ -13,8 +13,6 @@ interface Props {
 }
 
 const Featured = ({ projects }: Props) => {
-    const [isMobile, setIsMobile] = React.useState<boolean>(false)
-
     return (
         <Section id='projects'>
             <motion.div className='section-container flex flex-col gap-8 md:gap-12'>
@@ -25,7 +23,6 @@ const Featured = ({ projects }: Props) => {
                             key={index}
                             project={project}
                             reverseLayout={(index + 1) % 2 === 0}
-                            isMobile={isMobile}
                         />
                     ))}
                 </ProjectList>

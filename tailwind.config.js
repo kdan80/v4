@@ -14,6 +14,17 @@ module.exports = {
                 bgMainLight: 'rgb(38, 39, 42)',
                 dropdownNav: 'rgba(48, 49, 54,.6)',
                 header: 'rgba(28,29,34, .95)',
+                light: {
+                    100: '#fafbff',
+                    200: '#f0f2f6',
+                    300: '#eaebef',
+                    400: '#e0e2e4',
+                    500: '#dadbdf',
+                    600: '#d0d2d4',
+                    700: '#cacbcf',
+                    800: '#c0c2c4',
+                    900: '#babbbf',
+                },
             },
             backgroundImage: {
                 img: "url('/images/background.webp')",
@@ -44,6 +55,9 @@ module.exports = {
             gridTemplateColumns: {
                 skills: 'repeat(2, minmax(140px, 200px)',
                 project: 'repeat(12, 1fr)',
+            },
+            screens: {
+                xs: '540px',
             },
         },
     },
