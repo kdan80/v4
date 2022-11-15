@@ -27,40 +27,52 @@ const Header = ({ scrolledToTop }: Props) => {
     const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
     const scrollDirection = useScrollDirection()
 
-    return (
-        <header
-            // prettier-ignore
-            className={`fixed top-0 h-20 w-full py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg z-20 transition duration-500 ease-in-out
-            ${scrolledToTop ? '' : 'backdrop-blur drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)]'}
-            ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'} 
-            `}
-        >
-            <motion.div
-                variants={homeLinkVariants}
-                initial='initial'
-                animate='animate'
-            >
-                <a href='#landing'>
-                    <span className='text-hero'>
-                        &lt;/&gt;{' '}
-                        <span className='text-light-300 md:text-light-200 hover:text-hero transition ease-in-out duration-500'>
-                            kieran dansey
-                        </span>
-                    </span>
-                </a>
-            </motion.div>
+    //drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)]
 
-            <Nav navLinks={config.navLinks} />
-            <DropdownNav
-                navLinks={config.navLinks}
-                dropdownIsOpen={dropdownIsOpen}
-                setDropdownIsOpen={setDropdownIsOpen}
+    return (
+        <>
+            <div
+                // prettier-ignore
+                className={`fixed h-20 w-full top-0 transition duration-[500ms] ease-in-out z-80 
+                ${scrolledToTop ? '' : 'backdrop-blur'}
+                ${scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'}
+                `}
             />
-            <Hamburger
-                dropdownIsOpen={dropdownIsOpen}
-                setDropdownIsOpen={setDropdownIsOpen}
-            />
-        </header>
+            <header
+                // prettier-ignore
+                className={`fixed h-20 w-full top-0 py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg z-90 transition duration-500 ease-in-out
+                ${scrolledToTop ? '' : 'shadow'}
+                ${scrollDirection === 'down' ? 'translate-y-[-100%]' : 'translate-y-0 '} 
+                `}
+            >
+                <motion.div
+                    variants={homeLinkVariants}
+                    initial='initial'
+                    animate='animate'
+                    className='relative z-92'
+                >
+                    <a href='#landing'>
+                        <span className='text-hero'>
+                            &lt;/&gt;{' '}
+                            <span className='text-light-300 md:text-light-200 hover:text-hero transition ease-in-out duration-500'>
+                                kieran dansey
+                            </span>
+                        </span>
+                    </a>
+                </motion.div>
+
+                <Nav navLinks={config.navLinks} />
+                <DropdownNav
+                    navLinks={config.navLinks}
+                    dropdownIsOpen={dropdownIsOpen}
+                    setDropdownIsOpen={setDropdownIsOpen}
+                />
+                <Hamburger
+                    dropdownIsOpen={dropdownIsOpen}
+                    setDropdownIsOpen={setDropdownIsOpen}
+                />
+            </header>
+        </>
     )
 }
 

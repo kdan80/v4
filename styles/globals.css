@@ -8,8 +8,9 @@
     }
 }
 
-.back-hidden {
-    backface-visibility: hidden;
+/* Tail wind drop-shadow does not work in Header.tsx use this instead */
+.shadow {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* Scrollbar Styles */
