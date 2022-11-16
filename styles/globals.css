@@ -13,6 +13,18 @@
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
+.bd-blur {
+    backdrop-filter: blur(10px);
+}
+
+.hide {
+    transform: translateY(-100%);
+}
+
+.show {
+    transform: translateY(0);
+}
+
 /* Scrollbar Styles */
 body {
     overflow: overlay;

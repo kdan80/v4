@@ -30,16 +30,15 @@ const Header = ({ scrolledToTop, scrollDirection }: Props) => {
     return (
         <header
             // prettier-ignore
-            className={`fixed h-20 filter-none w-full top-0 py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg z-90 transition duration-500 ease-in-out
-                ${scrolledToTop ? '' : 'backdrop-blur shadow'}
-                ${scrollDirection === 'down' ? '-translate-y-[100%]' : 'translate-y-0 '} 
+            className={`fixed h-20  w-full top-0 py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg z-20 transition duration-500 ease-in-out
+                ${scrolledToTop ? '' : 'bd-blur shadow'}
+                ${scrollDirection === 'down' ? 'hide' : 'show'} 
                 `}
         >
             <motion.div
                 variants={homeLinkVariants}
                 initial='initial'
                 animate='animate'
-                className='relative z-92'
             >
                 <a href='#landing'>
                     <span className='text-hero'>
