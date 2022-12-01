@@ -7,7 +7,6 @@ import useScrolledToTop from 'hooks/useScrolledToTop'
 import Footer from 'components/Footer'
 import Link from 'next/link'
 import useScrollDirection from 'hooks/useScrollDirection'
-import HeaderBlurredBackdrop from 'components/header/HeaderBlurredBackdrop'
 
 interface Props {
     location?: string
@@ -18,12 +17,9 @@ const Layout = ({ children, location }: Props) => {
     const isHome = location === '/'
     const is404 = location === '404' && !isHome
     const [isLoading, setIsLoading] = React.useState<boolean>(isHome)
+    //const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
     const scrolledToTop = useScrolledToTop()
     const scrollDirection = useScrollDirection()
-
-    React.useEffect(() => {
-        console.log(scrollDirection)
-    }, [scrollDirection])
 
     return (
         <div className='relative min-h-screen max-w-screen overflow-x-hidden flex justify-center items-center font-sans text-light-300 md:text-light-200 selection:bg-heroDark selection:text-white'>
@@ -39,9 +35,6 @@ const Layout = ({ children, location }: Props) => {
                         <Loader finishLoading={() => setIsLoading(false)} />
                     :   !is404 &&
                         <>
-                            {/* <HeaderBlurredBackdrop 
-                                scrolledToTop={scrolledToTop} 
-                                scrollDirection={scrollDirection} /> */}
                             <Header 
                                 scrolledToTop={scrolledToTop} 
                                 scrollDirection={scrollDirection} />

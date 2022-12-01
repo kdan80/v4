@@ -77,15 +77,13 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
     }, [dropdownIsOpen, setDropdownIsOpen])
 
     return (
-        <motion.nav
-            variants={navDropdown}
-            initial='initial'
-            animate={dropdownIsOpen ? 'animate' : undefined}
-            transition={navDropdownTransition}
+        <nav
             // prettier-ignore
-            className='flex justify-center items-center absolute top-0 left-0 w-full h-screen backdrop-blur-md'
+            className={
+                `flex justify-center items-center absolute top-0 left-0 w-full h-screen bg-[#303234aa] backdrop-blur-md transition-all duration-300 ease-in-out
+                ${dropdownIsOpen ? 'translate-y-0' : '-translate-y-full'}`
+            }
         >
-            <div className='absolute top-0 left-0 bg-dark-500 opacity-60 w-full h-full' />
             <AnimatePresence>
                 {dropdownIsOpen && (
                     <motion.ol
@@ -111,7 +109,7 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
                     </motion.ol>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </nav>
     )
 }
 

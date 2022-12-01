@@ -55,7 +55,6 @@ const SocialsList = ({ scrolledToTop }: Props) => {
                 translateY: 0,
             })
         }
-        console.log('top: ', scrolledToTop)
     }, [scrolledToTop, socialsListControls])
 
     return (
