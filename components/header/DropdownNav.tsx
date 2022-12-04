@@ -51,7 +51,8 @@ const navLinkList = {
 
 const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => {
 
-
+    // This is effect handles page scroll
+    // It also automatically closes the dropdown if the page is resized to greater than 768px
     React.useEffect(() => {
         // innerWidth should be >= to the Hamburger.tsx hidden breakpoint
         const onResize = (e: UIEvent) => {
@@ -60,6 +61,11 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
                 setDropdownIsOpen(false)
             }
         }
+
+        // Disable page scroll when dropdown is open
+        dropdownIsOpen
+            ? document.body.classList.add('overflow-hidden')
+            : document.body.classList.remove('overflow-hidden')
 
         window.addEventListener('resize', onResize)
 
