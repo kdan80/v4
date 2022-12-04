@@ -16,7 +16,7 @@ const hamburgerVariants = {
 
 interface Props {
     dropdownIsOpen: boolean
-    toggleDropdown: () => React.Dispatch<SetStateAction<boolean>>
+    toggleDropdown: () => void
 }
 
 const Hamburger = ({ dropdownIsOpen, toggleDropdown }: Props) => {

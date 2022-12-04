@@ -17,7 +17,6 @@ const Layout = ({ children, location }: Props) => {
     const isHome = location === '/'
     const is404 = location === '404' && !isHome
     const [isLoading, setIsLoading] = React.useState<boolean>(isHome)
-    //const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
     const scrolledToTop = useScrolledToTop()
     const scrollDirection = useScrollDirection()
 

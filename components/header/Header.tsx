@@ -65,7 +65,6 @@ const Header = ({ scrolledToTop, scrollDirection }: Props) => {
             <Hamburger
                 dropdownIsOpen={dropdownIsOpen}
                 toggleDropdown={toggleDropdown}
-                setDropdownIsOpen={setDropdownIsOpen}
             />
         </header>
     )
