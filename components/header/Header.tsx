@@ -26,6 +26,13 @@ interface Props {
 const Header = ({ scrolledToTop, scrollDirection }: Props) => {
     const [dropdownIsOpen, setDropdownIsOpen] = React.useState<boolean>(false)
 
+    const toggleDropdown = () => {
+        dropdownIsOpen
+            ? document.body.classList.remove('overflow-hidden')
+            : document.body.classList.add('overflow-hidden')
+        return setDropdownIsOpen(prev => !prev)
+    }
+
     return (
         <header
             // prettier-ignore
@@ -57,6 +64,7 @@ const Header = ({ scrolledToTop, scrollDirection }: Props) => {
             />
             <Hamburger
                 dropdownIsOpen={dropdownIsOpen}
+                toggleDropdown={toggleDropdown}
                 setDropdownIsOpen={setDropdownIsOpen}
             />
         </header>

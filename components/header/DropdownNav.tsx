@@ -54,6 +54,7 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
     // I have added this flag to disable this animation until after the component has loaded
     const [componentIsMounted, setComponentIsMounted] = React.useState(false)
 
+
     React.useEffect(() => {
         setComponentIsMounted(true)
         // innerWidth should be >= to the Hamburger.tsx hidden breakpoint
@@ -65,11 +66,6 @@ const DropdownNav = ({ navLinks, dropdownIsOpen, setDropdownIsOpen }: Props) => 
         }
 
         window.addEventListener('resize', onResize)
-
-        // Disable scrolling when the dropdown is open
-        dropdownIsOpen
-            ? document.body.classList.add('overflow-hidden')
-            : document.body.classList.remove('overflow-hidden')
 
         return () => {
             window.removeEventListener('resize', onResize)

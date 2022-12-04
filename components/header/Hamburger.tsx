@@ -16,13 +16,10 @@ const hamburgerVariants = {
 
 interface Props {
     dropdownIsOpen: boolean
-    setDropdownIsOpen: React.Dispatch<SetStateAction<boolean>>
+    toggleDropdown: () => React.Dispatch<SetStateAction<boolean>>
 }
 
-const Hamburger = ({ dropdownIsOpen, setDropdownIsOpen }: Props) => {
-    const handleClick = () => {
-        return setDropdownIsOpen(dropdownIsOpen => !dropdownIsOpen)
-    }
+const Hamburger = ({ dropdownIsOpen, toggleDropdown }: Props) => {
 
     return (
         <motion.button
@@ -32,7 +29,7 @@ const Hamburger = ({ dropdownIsOpen, setDropdownIsOpen }: Props) => {
             className={
                 dropdownIsOpen ? 'md:hidden hamburger isOpen z-30' : 'md:hidden hamburger z-30'
             }
-            onClick={handleClick}
+            onClick={toggleDropdown}
             type='button'>
             <div className='barBox'>
                 <div className='top bar' />
