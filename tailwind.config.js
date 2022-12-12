@@ -78,6 +78,21 @@ module.exports = {
                 skills: 'repeat(2, minmax(140px, 200px)',
                 project: 'repeat(12, 1fr)',
             },
+            keyframes: {
+                slideInFromLeft: {
+                    '0%': { 
+                        transform: 'translateX(-100%)', 
+                        opacity: 0
+                    },
+                    '100%': { 
+                        transform: 'translateX(0)', 
+                        opacity: 1 
+                    }
+                }
+            },
+            animation: {
+                slideInFromLeft: 'slideInFromLeft 300ms ease-in-out'
+            },
             screens: {
                 xs: '540px',
             },
