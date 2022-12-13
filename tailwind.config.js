@@ -88,10 +88,19 @@ module.exports = {
                         transform: 'translateX(0)', 
                         opacity: 1 
                     }
-                }
+                },
+                slideDown: {
+                    '0%': { 
+                        transform: 'translateY(-100%)', 
+                    },
+                    '100%': { 
+                        transform: 'translateY(0)', 
+                    }
+                },
             },
             animation: {
-                slideInFromLeft: 'slideInFromLeft 300ms ease-in-out'
+                slideInFromLeft: 'slideInFromLeft 300ms ease-in-out',
+                slideDown: 'slideDown 250ms ease-in-out',
             },
             screens: {
                 xs: '540px',

@@ -50,11 +50,13 @@ const Header = ({ scrolledToTop, scrollDirection }: Props) => {
             </motion.div>
 
             <Nav navLinks={config.navLinks} />
+            
             <DropdownNav
-                navLinks={config.navLinks}
                 dropdownIsOpen={dropdownIsOpen}
+                navLinks={config.navLinks}
                 setDropdownIsOpen={setDropdownIsOpen}
             />
+              
             <Hamburger
                 dropdownIsOpen={dropdownIsOpen}
                 setDropdownIsOpen={setDropdownIsOpen}
