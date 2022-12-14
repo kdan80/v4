@@ -29,7 +29,7 @@ const Layout = ({ children, location }: Props) => {
 
             {
                 // prettier-ignore
-                isLoading && isHome && !is404 && false
+                isLoading && isHome && !is404
                     ? 
                         <Loader finishLoading={() => setIsLoading(false)} />
                     :   !is404 &&
