@@ -37,7 +37,7 @@ const Project = ({ project, reverseLayout }: Props) => {
                         alt={title}
                         placeholder='blur'
                         blurDataURL={blurData}
-                        className='grayscale-[50%] w-full h-full blur-sm md:blur-none object-cover hover:grayscale-0 lg:brightness-75 hover:brightness-100 transition ease-in-out duration-500'
+                        className='w-full h-full object-cover blur-sm md:blur-none grayscale-50 hover:grayscale-0 lg:brightness-75 hover:brightness-100 transition ease-in-out duration-500'
                     />
                     <div
                         className={`absolute top-0 left-0 block lg:hidden w-full h-full bg-dark-400 opacity-[92%] md:bg-black md:opacity-50 md:hover:opacity-30 transition duration-500 ease-in-out`}

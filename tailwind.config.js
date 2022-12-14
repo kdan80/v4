@@ -51,6 +51,9 @@ module.exports = {
             backgroundImage: {
                 img: "url('/images/background.webp')",
             },
+            grayscale: {
+                50: '0.5'
+            },
             fontFamily: {
                 sans: [
                     'Poppins',
