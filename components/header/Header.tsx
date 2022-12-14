@@ -30,7 +30,7 @@ const Header = ({ scrolledToTop, scrollDirection }: Props) => {
         <header
             // prettier-ignore
             className={`fixed h-20  w-full top-0 py-0 px-[5vw] md:px-12 flex justify-between items-center text-lg z-20 transition duration-500 ease-in-out
-                ${scrolledToTop ? '' : 'bg-[#151718] md:bg-[#15171866] md:backdrop-blur-md shadow'}
+                ${scrolledToTop ? '' : 'backdrop-blur-md shadow'}
                 ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'} 
             `}
         >
