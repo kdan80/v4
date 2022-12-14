@@ -12,4 +12,4 @@ tech:
   - Anime.js
 ---
 
-My personal website built with the Next.js and Tailwind. Intersection observer is used to achieve a scroll fade effect and anime.js is used for the logo animations.
+My personal website built with Next.js and Tailwind. Intersection observer is used to achieve a scroll fade effect and anime.js is used for the logo animations.
